@@ -1,0 +1,493 @@
+/* === GRUNDEINSTELLUNGEN & VARIABLEN === */
+:root {
+    --color-primary: #2c3e50; /* Dunkles Marineblau (professionell) */
+    --color-secondary: #f4f4f4; /* Helles Grau (sauberer Hintergrund) */
+    --color-accent: #3498db; /* Helles, klares Blau (Vertrauen) */
+    --color-white: #ffffff;
+    --color-text: #555;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+section {
+    padding: 6rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: -2rem auto 3rem auto;
+    color: var(--color-text);
+}
+
+/* === HERO & NAVBAR === */
+.hero-section {
+    height: 90vh; 
+    /* HIER WIRD DAS BILD GELADEN: */
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('bilder/hero-background.jpeg') no-repeat center center/cover;
+    
+    /* DIES SETZT DIE TEXTFARBE FÜR DEN HEADER AUF WEISS: */
+    color: var(--color-white);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 2000;
+}
+
+/* NEU: Stile für Logo-Bild */
+.navbar .logo {
+    flex-shrink: 0; 
+}
+
+.navbar .logo img {
+    height: 75px; /* Höhe für Navbar-Logo */
+    width: auto;
+}
+
+.nav-links a {
+    color: var(--color-white); /* Stellt sicher, dass die Links weiß sind */
+    margin-left: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.hero-content h3 {
+    font-weight: 200;
+    font-size: 1.25rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem; 
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 1rem 0;
+    color: var(--color-accent); 
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    /* NEUES DESIGN (wie in new-header-style.jpg) */
+    background: var(--color-white); /* Solider weißer Hintergrund */
+    color: var(--color-primary); /* Dunkler Text */
+    border: 2px solid var(--color-white); /* Weißer Rand */
+}
+
+.cta-button:hover {
+    /* Leichter Effekt beim Darüberfahren */
+    background: transparent;
+    color: var(--color-white);
+}
+
+/* === ABOUT (WARUM MENDO) === */
+.about-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: -2rem auto 3rem auto;
+    color: var(--color-text);
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.why-us-card .why-us-icon {
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.why-us-card h4 {
+    font-size: 1.2rem;
+}
+
+/* === LEISTUNGEN === */
+.services-section {
+    background: var(--color-secondary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: var(--color-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.service-card h4 {
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+.service-card p {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+/* === KUNDENSTIMMEN === */
+.testimonials-section {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.testimonials-section h2 {
+    color: var(--color-white);
+}
+
+.testimonials-section .section-intro {
+    color: #ccc;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.testimonial-card span {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+/* === GALERIE === */
+.gallery-section {
+    padding-bottom: 0;
+}
+.gallery-grid {
+    padding-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    opacity: 0.8;
+}
+
+/* === TEAM SECTION === */
+.team-section {
+    background: var(--color-secondary);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-member-card {
+    text-align: center;
+}
+
+.team-member-card img {
+    border-radius: 50%; /* Runde Bilder */
+    border: 5px solid var(--color-white);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    width: 200px; /* Feste Größe */
+    height: 200px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-member-card p {
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+
+/* === FOOTER === */
+.footer-section {
+    background: #222;
+    color: var(--color-secondary);
+    padding: 5rem 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+/* NEU: Stile für Logo-Bild im Footer */
+.footer-logo img {
+    max-width: 250px;
+    margin-bottom: 1rem;
+}
+
+.footer-logo .footer-tagline {
+    font-style: italic;
+    color: var(--color-accent);
+    margin-top: 1rem;
+}
+
+.footer-section h4 {
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ccc;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+/* === JAVASCRIPT: Fade-in Effect === */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* === RESPONSIVE DESIGN (Media Queries) === */
+
+@media (max-width: 1024px) {
+    .why-us-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        display: none; /* Mobile-Menü wäre nächster Schritt */
+    }
+
+    .why-us-grid,
+    .services-grid,
+    .testimonials-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Zentriert Logo im Mobile-Footer */
+    }
+}
+
+/* === HAMBURGER MENU (Desktop: Unsichtbar) === */
+.burger-menu {
+    display: none; /* Wichtig: Am PC unsichtbar! */
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Weiße Striche */
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* === NUR FÜR HANDY (max-width: 768px) === */
+@media (max-width: 768px) {
+    
+    /* 1. Burger-Knopf sichtbar machen */
+    .burger-menu {
+        display: block;
+        position: relative;
+        z-index: 9999; /* Über dem Menü */
+    }
+
+    /* 2. Das Menü selbst umgestalten */
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        height: 100vh; /* Ganzer Bildschirm hoch */
+        width: 60%;    /* Breite des Menüs */
+        background-color: #2c3e50; /* Deine dunkelblaue Farbe */
+        
+        /* Flexbox für vertikale Anordnung */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        /* Verstecken (nach rechts schieben) */
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 2000;
+        padding-top: 100px;
+    }
+
+    /* 3. Links im Handy-Menü größer machen */
+    .nav-links a {
+        color: white;
+        font-size: 1.2rem;
+        margin: 1.5rem 0;
+        opacity: 1;
+    }
+
+    /* 4. Klasse zum Anzeigen (wird per JS aktiviert) */
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    /* 5. Animation zum "X" beim Öffnen */
+    .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); }
+    .toggle .line2 { opacity: 0; }
+    .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); }
+}
